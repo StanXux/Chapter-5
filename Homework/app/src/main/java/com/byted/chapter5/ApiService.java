@@ -1,6 +1,7 @@
 package com.byted.chapter5;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 
 public interface ApiService {
@@ -12,5 +13,8 @@ public interface ApiService {
     // https://www.wanandroid.com/user/register
     //方法：POST
     //	username,password,repassword
+    Call<UserResponse> register(@Field("username") String username,
+                                @Field("password") String password,
+                                @Field("repassword") String repassword);
 
 }
